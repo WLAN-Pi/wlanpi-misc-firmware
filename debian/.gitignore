@@ -1,0 +1,8 @@
+wlanpi-misc-firmware.*.debhelper
+wlanpi-misc-firmware.substvars
+debhelper*
+.debhelper*
+DEBIAN*
+files
+*.log
+*.gz

@@ -1,0 +1,26 @@
+Source: wlanpi-misc-firmware
+Section: non-free/kernel
+Priority: optional
+Maintainer: Josh Schmelzle <josh@joshschmelzle.com>
+Build-Depends: debhelper (>= 11)
+Standards-Version: 4.3.0
+Homepage: https://github.com/WLAN-Pi/wlanpi-misc-firmware
+
+Package: wlanpi-misc-firmware
+Architecture: all
+Provides:
+Depends: ${misc:Depends}
+Recommends:
+Suggests:
+Replaces:
+Breaks:
+Conflicts:
+Description: Binary firmware for misc wireless cards
+ Packaged by WLAN Pi team with latest updates from main.
+ .
+ Contents:
+ * MediaTek MT7921 firmware
+   (/lib/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin)
+   (/lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin)
+   (/lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin)
+
