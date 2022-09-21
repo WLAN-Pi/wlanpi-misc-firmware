@@ -1,5 +1,6 @@
 wlanpi-misc-firmware.*.debhelper
 wlanpi-misc-firmware.substvars
+wlanpi-misc-firmware/
 debhelper*
 .debhelper*
 DEBIAN*
