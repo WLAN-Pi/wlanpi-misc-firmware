@@ -2,6 +2,7 @@ Source: wlanpi-misc-firmware
 Section: non-free/kernel
 Priority: optional
 Maintainer: Josh Schmelzle <josh@joshschmelzle.com>
+Uploaders: 
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.3.0
 Homepage: https://github.com/WLAN-Pi/wlanpi-misc-firmware
