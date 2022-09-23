@@ -16,7 +16,7 @@ Suggests:
 Replaces: firmware-misc-nonfree
 Breaks:
 Conflicts:
-Description: Binary firmware for misc wireless cards
+Description: WLAN Pi - binary firmware for misc wireless cards
  Packaged by WLAN Pi team with latest updates from main.
  .
  Contents:
