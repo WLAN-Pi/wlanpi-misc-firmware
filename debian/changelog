@@ -1,5 +1,5 @@
-wlanpi-misc-firmware (1.0.0~rc3) UNRELEASED; urgency=medium
+wlanpi-misc-firmware (1.0.0) unstable; urgency=medium
 
   * Initial release.
 
- -- Josh Schmelzle <josh@joshschmelzle.com>  Wed, 21 Sep 2022 02:39:09 -0400
+ -- Josh Schmelzle <josh@joshschmelzle.com>  Wed, 23 Sep 2022 10:23:09 -0400
