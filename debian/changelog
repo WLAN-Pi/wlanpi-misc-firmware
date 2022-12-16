@@ -1,3 +1,7 @@
+wlanpi-misc-firmware (1.0.2) unstable; urgency=medium
+
+  * Update MediaTek firmware files as of Nov 16 2022
+  
 wlanpi-misc-firmware (1.0.1) unstable; urgency=medium
 
   * Update MediaTek firmware files
