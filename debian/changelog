@@ -1,3 +1,17 @@
+wlanpi-misc-firmware (1.0.4) unstable; urgency=medium
+
+  * Update MediaTek firmware files as of Jan 21 2023
+
+Update binary firmware for MT7921 WiFi devices
+
+File: mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin
+Version: 20230117170855a
+File: mediatek/WIFI_RAM_CODE_MT7961_1.bin
+Version: 20230117170942
+File: mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin
+Version: 20230117171152
+
+
 wlanpi-misc-firmware (1.0.3) unstable; urgency=medium
 
   * Update MediaTek firmware files as of Jan 04 2023
