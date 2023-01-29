@@ -1,3 +1,9 @@
+wlanpi-misc-firmware (1.0.5) unstable; urgency=medium
+
+  * Update MediaTek firmware files for MT7922
+
+ -- Adrian Granados <adrian@intuitibits.com>  Sun, Jan 29 2023 17:00:00 -0600
+
 wlanpi-misc-firmware (1.0.4) unstable; urgency=medium
 
   * Update MediaTek firmware files as of Jan 21 2023
