@@ -1,3 +1,10 @@
+wlanpi-misc-firmware (1.0.6) unstable; urgency=medium
+
+  * Add support for Comfast CF-953AX USB Wi-Fi adapter
+  * Add support for Netgear Nighthawk AXE3000 USB Wi-Fi adapter
+
+ -- Jiri Brejcha <jirka@jiribrejcha.net>  Wed, 23 Aug 2023 21:07:03 +0100
+
 wlanpi-misc-firmware (1.0.5) unstable; urgency=medium
 
   * Update MediaTek firmware files for MT7922
