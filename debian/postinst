@@ -2,14 +2,17 @@
 
 #DEBHELPER#
 
-# Add support for new MediaTek adapters
+# Add support for MediaTek mt7921u adapters
 echo "mt7921u" > /etc/modules-load.d/mt7921u.conf
 
 # Support Comfast CF-953AX USB adapter
+echo "Adding support for Comfast CF-953AX USB adapter"
 echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7921u", ATTR{new_id}="3574 6211"' > /etc/udev/rules.d/99-cf95x.rules
 
 # Support Netgear Nighthawk AXE3000 USB adapter
+echo "Adding support for Netgear Nighthawk AXE3000 USB adapter"
 echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7921u", ATTR{new_id}="0846 9060"' > /etc/udev/rules.d/99-axe3000.rules
 
 # Apply changes immediately without requiring a reboot
+echo 'Adding "mt7921u" kernel module'
 modprobe mt7921u
