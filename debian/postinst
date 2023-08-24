@@ -13,6 +13,8 @@ echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7921u", ATTR{new_id}="3
 echo "Adding support for Netgear Nighthawk AXE3000 USB adapter"
 echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7921u", ATTR{new_id}="0846 9060"' > /etc/udev/rules.d/99-axe3000.rules
 
-# Apply changes immediately without requiring a reboot
-echo 'Adding "mt7921u" kernel module'
-modprobe mt7921u
+# If this is not being executed by pi-gen during image build process, apply changes immediately without requiring a reboot
+if [ -f /etc/wlanpi-release ]; then
+    echo "Adding mt7921u kernel module"
+    modprobe mt7921u
+fi
