@@ -1,4 +1,4 @@
-wlanpi-misc-firmware (1.0.6) unstable; urgency=medium
+wlanpi-misc-firmware (1.0.6-1) unstable; urgency=medium
 
   * Add support for Comfast CF-953AX USB Wi-Fi adapter
   * Add support for Netgear Nighthawk AXE3000 USB Wi-Fi adapter
