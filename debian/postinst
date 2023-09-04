@@ -16,5 +16,7 @@ echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7921u", ATTR{new_id}="0
 # If this is not being executed by pi-gen during image build process, apply changes immediately without requiring a reboot
 if [ -f /etc/wlanpi-release ]; then
     echo "Adding mt7921u kernel module"
-    modprobe mt7921u
+    modprobe mt7921u -q
 fi
+
+exit 0
