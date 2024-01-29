@@ -1,8 +1,8 @@
- -- Jiri Brejcha <jirka@jiribrejcha.net>  Mon, 29 Jan 2024 22:50:03 +0000
-
 wlanpi-misc-firmware (1.0.9) unstable; urgency=medium
 
   * Add Intel Corp. BE200 Bluetooth device name to lsusb
+
+ -- Jiri Brejcha <jirka@jiribrejcha.net>  Mon, 29 Jan 2024 22:50:03 +0000
 
 wlanpi-misc-firmware (1.0.8) unstable; urgency=medium
 
