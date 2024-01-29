@@ -25,6 +25,7 @@ if [ ! -f "$HWDB_FILE" ]; then
     touch "$HWDB_FILE"
 fi
 if ! grep -q "usb:v8087p0036" "$HWDB_FILE"; then
+echo "Adding Intel Corp. BE200 Bluetooth device name to lsusb"
 cat >"$HWDB_FILE" <<'EOL'
 # Intel Corp. BE200 Bluetooth device name added by WLAN Pi team
 usb:v8087p0036*

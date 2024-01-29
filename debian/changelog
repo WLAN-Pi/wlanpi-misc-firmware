@@ -1,4 +1,4 @@
-wlanpi-misc-firmware (1.0.9) unstable; urgency=medium
+wlanpi-misc-firmware (1.0.9-1) unstable; urgency=medium
 
   * Add Intel Corp. BE200 Bluetooth device name to lsusb
 
