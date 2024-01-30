@@ -35,4 +35,8 @@ EOL
 systemd-hwdb update
 fi
 
+# Update lspci PCI device names
+echo "Updating lspci PCI device names"
+update-pciids
+
 exit 0
