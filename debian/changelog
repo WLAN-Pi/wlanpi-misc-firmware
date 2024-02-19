@@ -1,3 +1,9 @@
+wlanpi-misc-firmware (1.0.11) unstable; urgency=medium
+
+  * Add MEDIATEK MT7922 Bluetooth and MT7921K Bluetooth device names to lsusb
+
+ -- Jiri Brejcha <jirka@jiribrejcha.net>  Mon, 19 Feb 2024 00:34:03 +0000
+
 wlanpi-misc-firmware (1.0.10) unstable; urgency=medium
 
   * Add Intel Corp. BE200 Bluetooth device name to lsusb
