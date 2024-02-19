@@ -19,34 +19,17 @@ if [ -f /etc/wlanpi-release ]; then
     modprobe mt7921u -q
 fi
 
-# Add custom WLAN Pi Bluetooth device names to lsusb
+# Add Intel Corp. BE200 Bluetooth device name to lsusb
 HWDB_FILE="/usr/lib/udev/hwdb.d/99-usb-vendor-model.hwdb"
 if [ ! -f "$HWDB_FILE" ]; then
     touch "$HWDB_FILE"
 fi
-# Add Intel Corp. BE200 Bluetooth device name to lsusb
 if ! grep -q "usb:v8087p0036" "$HWDB_FILE"; then
 echo "Adding Intel Corp. BE200 Bluetooth device name to lsusb"
 cat >"$HWDB_FILE" <<'EOL'
 # Intel Corp. BE200 Bluetooth device name added by WLAN Pi team
 usb:v8087p0036*
  ID_MODEL_FROM_DATABASE=BE200 Bluetooth
-EOL
-# Add MEDIATEK Corp. MT7922 Bluetooth device name to lsusb
-if ! grep -q "usb:v0e8dp0616" "$HWDB_FILE"; then
-echo "Adding MEDIATEK Corp. MT7922 Bluetooth device name to lsusb"
-cat >"$HWDB_FILE" <<'EOL'
-# MediaTek MT7922A Bluetooth device name added by WLAN Pi team
-usb:v0e8dp0616*
- ID_MODEL_FROM_DATABASE=MT7922 Bluetooth
-EOL
-# Add MEDIATEK Corp. MT7921K Bluetooth device name to lsusb
-if ! grep -q "usb:v0e8dp0608" "$HWDB_FILE"; then
-echo "Adding MEDIATEK Corp. MT7921K Bluetooth device name to lsusb"
-cat >"$HWDB_FILE" <<'EOL'
-# MediaTek MT7921K Bluetooth device name added by WLAN Pi team
-usb:v0e8dp0608*
- ID_MODEL_FROM_DATABASE=MT7921K Bluetooth
 EOL
 # Refresh systemd-hwdb to add the new device
 systemd-hwdb update
