@@ -39,4 +39,11 @@ fi
 echo "Updating lspci PCI device names"
 update-pciids
 
+# Deleting BT RAM CODE fixes issues with MT7921AUN Wi-Fi adapters connected to M4 and M4+
+MT_USB_ADAPTER_BT_FIRMWARE="/usr/lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin"
+if [ -f "$MT_USB_ADAPTER_BT_FIRMWARE" ]; then
+    echo "Deleting MediaTek USB Wi-Fi adapter Bluetooth firmware file"
+    sudo rm -f "$MT_USB_ADAPTER_BT_FIRMWARE"
+fi
+
 exit 0
