@@ -1,4 +1,4 @@
-wlanpi-misc-firmware (1.0.12) unstable; urgency=medium
+wlanpi-misc-firmware (1.0.12-1) unstable; urgency=medium
 
   * Deleting BT RAM CODE fixes issues with MT7921AUN Wi-Fi adapters connected to M4 and M4+
 
