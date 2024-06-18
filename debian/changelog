@@ -1,3 +1,9 @@
+wlanpi-misc-firmware (1.0.13) unstable; urgency=medium
+
+  * Adds firmware for MediaTek MT7925 M.2 Wi-Fi 7 adapter
+
+ -- Jiri Brejcha <jirka@jiribrejcha.net>  Tue, 18 Jun 2024 11:02:03 +0100
+
 wlanpi-misc-firmware (1.0.12-1) unstable; urgency=medium
 
   * Deleting BT RAM CODE fixes issues with MT7921AUN Wi-Fi adapters connected to M4 and M4+
