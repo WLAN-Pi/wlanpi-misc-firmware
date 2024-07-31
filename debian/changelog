@@ -1,3 +1,9 @@
+wlanpi-misc-firmware (1.0.14) unstable; urgency=medium
+
+  * Updates MediaTek firmware to version 20240716, latest available as of 31 July 2024
+
+ -- Jiri Brejcha <jirka@jiribrejcha.net>  Wed, 31 Mar 2024 19:45:03 +0100
+
 wlanpi-misc-firmware (1.0.13) unstable; urgency=medium
 
   * Adds firmware for MediaTek MT7925 M.2 Wi-Fi 7 adapter
