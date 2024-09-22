@@ -1,3 +1,21 @@
+wlanpi-misc-firmware (1.0.15) unstable; urgency=medium
+
+  * Updates MediaTek firmware to latest versions as of 22nd Sep 2024
+
+  * BT_RAM_CODE_MT7961_1_2_hdr-2.bin  - do not install, breaks USB adapters
+  * WIFI_MT7961_patch_mcu_1_2_hdr.bin - upgrading from 20240716150944a to 20240826150948a
+  * WIFI_RAM_CODE_MT7961_1.bin - upgrading from 20240826150901 to 20240716150858
+
+  * BT_RAM_CODE_MT7925_1_1_hdr.bin - upgrading from 20231227094014 to 20240816133202
+  * WIFI_MT7925_PATCH_MCU_1_1_hdr.bin - upgrading 20231227093012a to 20240816132951a
+  * WIFI_RAM_CODE_MT7925_1_1.bin - upgrading from 20231227092856 to 20240816132855
+
+  * WIFI_RAM_CODE_MT7922_1 - is already using latest 20240716163157
+  * WIFI_MT7922_patch_mcu_1_1_hdr.bin - is already using latest 20240716163242a
+  * BT_RAM_CODE_MT7922_1_1_hdr.bin - is already using latest 20240716163633
+
+-- Jiri Brejcha <jirka@jiribrejcha.net>  Sun, 22 Sep 2024 14:52:00 +0100
+
 wlanpi-misc-firmware (1.0.14) unstable; urgency=medium
 
   * Updates MediaTek firmware to version 20240716, latest available as of 31 July 2024
