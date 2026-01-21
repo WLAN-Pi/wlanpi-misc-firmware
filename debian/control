@@ -9,26 +9,22 @@ Homepage: https://github.com/WLAN-Pi/wlanpi-misc-firmware
 
 Package: wlanpi-misc-firmware
 Architecture: all
-Provides:
 Depends: ${misc:Depends}
-Recommends:
-Suggests:
-Replaces: firmware-misc-nonfree
-Breaks:
-Conflicts:
 Description: WLAN Pi - binary firmware for misc wireless cards
- Packaged by WLAN Pi team typically with latest updates from main.
+ Packaged by WLAN Pi team with latest updates from MediaTek.
+ .
+ This package uses dpkg-divert to ensure its newer MediaTek firmware
+ takes precedence over firmware-mediatek if both are installed.
  .
  Contents:
- * MediaTek MT7921 firmware
+ * MediaTek MT7961 (MT7921) firmware
    (/lib/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin)
    (/lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin)
-   (/lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin)
  * MediaTek MT7922 firmware
    (/lib/firmware/mediatek/WIFI_RAM_CODE_MT7922_1.bin)
    (/lib/firmware/mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin)
    (/lib/firmware/mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin)
- * MediaTek MT7925 firmware
+ * MediaTek MT7925 firmware (WiFi 7)
    (/lib/firmware/mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin)
    (/lib/firmware/mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin)
    (/lib/firmware/mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin)
