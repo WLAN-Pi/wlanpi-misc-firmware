@@ -1,5 +1,11 @@
 wlanpi-misc-firmware (1.0.16) unstable; urgency=medium
 
+  * Update udev rules for MT7925
+
+ -- Josh Schmelzle <josh@joshschmelzle.com>  Mon, 2 Feb 2026 00:00:00 -0500
+
+wlanpi-misc-firmware (1.0.16) unstable; urgency=medium
+
   * Add dpkg-divert support for MT7925 firmware to coexist with firmware-mediatek
   * Update all MediaTek firmware to latest upstream (linux-firmware 2026-01-19)
   * Remove obsolete Replaces: firmware-misc-nonfree declaration
