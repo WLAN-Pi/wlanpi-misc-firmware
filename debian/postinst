@@ -5,18 +5,27 @@
 # Add support for MediaTek mt7921u adapters
 echo "mt7921u" > /etc/modules-load.d/mt7921u.conf
 
-# Support Comfast CF-953AX USB adapter
+# Add support for MediaTek mt7925u adapters
+echo "mt7925u" > /etc/modules-load.d/mt7925u.conf
+
+# Support Comfast CF-953AX USB adapter (mt7921u)
 echo "Adding support for Comfast CF-953AX USB adapter"
 echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7921u", ATTR{new_id}="3574 6211"' > /etc/udev/rules.d/99-cf95x.rules
 
-# Support Netgear Nighthawk AXE3000 USB adapter
+# Support Netgear Nighthawk AXE3000 USB adapter (mt7921u)
 echo "Adding support for Netgear Nighthawk AXE3000 USB adapter"
 echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7921u", ATTR{new_id}="0846 9060"' > /etc/udev/rules.d/99-axe3000.rules
+
+# Support Netgear Nighthawk A9000 USB adapter (mt7925u)
+echo "Adding support for Netgear Nighthawk A9000 USB adapter"
+echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7925u", ATTR{new_id}="0846 9072"' > /etc/udev/rules.d/99-a9000.rules
 
 # If this is not being executed by pi-gen during image build process, apply changes immediately without requiring a reboot
 if [ -f /etc/wlanpi-release ]; then
     echo "Adding mt7921u kernel module"
     modprobe mt7921u -q
+    echo "Adding mt7925u kernel module"
+    modprobe mt7925u -q
 fi
 
 # Add Intel Corp. BE200 Bluetooth device name to lsusb
