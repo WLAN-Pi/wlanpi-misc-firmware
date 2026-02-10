@@ -3,8 +3,13 @@ set -e
 
 # Remove diversions when package is removed or purged
 if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
-    # Remove diversions for MT7925 files
-    for f in mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin \
+    # Remove diversions for all MediaTek firmware files
+    for f in mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin \
+             mediatek/WIFI_RAM_CODE_MT7922_1.bin \
+             mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin \
+             mediatek/WIFI_RAM_CODE_MT7961_1.bin \
+             mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin \
+             mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin \
              mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin \
              mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin; do
         dpkg-divert --package wlanpi-misc-firmware --no-rename --quiet \
