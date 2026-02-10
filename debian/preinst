@@ -3,7 +3,7 @@ set -e
 
 # Only add diversions on install or upgrade
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
-    # Divert firmware-mediatek's files if they exist
+    # Divert firmware-misc-nonfree's files if they exist
     # This ensures wlanpi-misc-firmware's newer firmware takes precedence
     for f in mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin \
              mediatek/WIFI_RAM_CODE_MT7922_1.bin \

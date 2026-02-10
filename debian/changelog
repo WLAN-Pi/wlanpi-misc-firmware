@@ -1,6 +1,6 @@
 wlanpi-misc-firmware (1.0.18) unstable; urgency=medium
 
-  * Add dpkg-divert support for MT7922 and MT7961 firmware to coexist with
+  * Add dpkg-divert support for MT7922 and MT7961 firmwares to coexist with
     firmware-misc-nonfree
 
  -- Josh Schmelzle <josh@joshschmelzle.com>  Mon, 09 Feb 2026 19:04:50 -0500

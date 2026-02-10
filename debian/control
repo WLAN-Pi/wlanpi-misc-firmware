@@ -10,11 +10,14 @@ Homepage: https://github.com/WLAN-Pi/wlanpi-misc-firmware
 Package: wlanpi-misc-firmware
 Architecture: all
 Depends: ${misc:Depends}
+Replaces: firmware-mediatek
+Conflicts: firmware-mediatek
 Description: WLAN Pi - binary firmware for misc wireless cards
  Packaged by WLAN Pi team with latest updates from MediaTek.
  .
- This package uses dpkg-divert to ensure its newer MediaTek firmware
- takes precedence over firmware-mediatek if both are installed.
+ This package provides newer MediaTek firmware and replaces
+ firmware-mediatek when installed. It uses dpkg-divert to take
+ precedence over firmware-misc-nonfree for overlapping files.
  .
  Contents:
  * MediaTek MT7961 (MT7921) firmware
