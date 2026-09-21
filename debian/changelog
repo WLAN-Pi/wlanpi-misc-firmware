@@ -1,3 +1,16 @@
+wlanpi-misc-firmware (1.0.19) unstable; urgency=medium
+
+  * Add MediaTek MT7612U firmware (mt7662.bin, mt7662_rom_patch.bin)
+  * Add MediaTek MT7961 Bluetooth firmware (BT_RAM_CODE_MT7961_1_2_hdr.bin)
+  * Update MT7961 Wi-Fi firmware to the 2026-02-24 upstream snapshot:
+    * WIFI_MT7961_patch_mcu_1_2_hdr.bin: 20251223091050a -> 20260224110909a
+    * WIFI_RAM_CODE_MT7961_1.bin: 20251223091722 -> 20260224110949
+  * Remove the postinst workaround that deleted the MT7961 Bluetooth firmware
+  * Add diversions for the new firmware files
+  * Document MT7961 Bluetooth firmware findings in docs/mt7961-bt-firmware.md
+
+ -- Josh Schmelzle <josh@joshschmelzle.com>  Mon, 21 Sep 2026 18:00:00 -0500
+
 wlanpi-misc-firmware (1.0.18) unstable; urgency=medium
 
   * Add dpkg-divert support for MT7922 and MT7961 firmwares to coexist with
