@@ -1,4 +1,3 @@
-lib/firmware/mediatek/* lib/firmware/mediatek/
-lib/firmware/mt7662.bin lib/firmware/
-lib/firmware/mt7662_rom_patch.bin lib/firmware/
-
+lib/firmware/mediatek/* usr/lib/firmware/mediatek/
+lib/firmware/mt7662.bin usr/lib/firmware/
+lib/firmware/mt7662_rom_patch.bin usr/lib/firmware/

@@ -5,7 +5,9 @@ on:
 
   pull_request:
     paths:
-      - 'debian/changelog'
+      - 'debian/**'
+      - 'lib/**'
+      - '.github/workflows/**'
 
 permissions:
   contents: read
@@ -20,22 +22,28 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        distro: [bookworm,trixie]
+        distro: [trixie]
         arch: [arm64]
-    
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: sbuild for ${{ matrix.distro }} ${{ matrix.arch }}
-        uses: wlan-pi/sbuild-debian-package@main
+        uses: wlan-pi/sbuild-debian-package@70ddba77e3ea21d768b2d29767689cf70c2e08fa # main
         id: build-debian-package
         with:
           distro: ${{ matrix.distro }}
           arch: ${{ matrix.arch }}
 
+      - name: Lintian
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lintian
+          lintian --fail-on error "${{ steps.build-debian-package.outputs.deb-package }}"
+
       - name: Archive artifacts and upload to GitHub
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: wlanpi-misc-firmware-${{ matrix.distro }}-${{ matrix.arch }}
           path: ${{ steps.build-debian-package.outputs.deb-package }}
@@ -48,7 +56,7 @@ jobs:
     runs-on: 'ubuntu-24.04-arm'
     steps:
       - name: Slack Workflow Notification
-        uses: Gamesight/slack-workflow-status@master
+        uses: Gamesight/slack-workflow-status@2e709ce51fd47f02b7221db8547e6e6f49f81f1d # master
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}

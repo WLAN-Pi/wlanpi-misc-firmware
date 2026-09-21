@@ -3,6 +3,24 @@ set -e
 
 # Only add diversions on install or upgrade
 if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
+    # Remove diversions registered by earlier versions at the aliased /lib path
+    for f in mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin \
+             mediatek/WIFI_RAM_CODE_MT7922_1.bin \
+             mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin \
+             mediatek/WIFI_RAM_CODE_MT7961_1.bin \
+             mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin \
+             mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin \
+             mediatek/mt7610u.bin \
+             mediatek/mt7610e.bin \
+             mt7662.bin \
+             mt7662_rom_patch.bin \
+             mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin \
+             mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin \
+             mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin; do
+        dpkg-divert --package wlanpi-misc-firmware --no-rename --quiet \
+            --remove "/lib/firmware/$f" || true
+    done
+
     # Divert firmware-misc-nonfree's files if they exist
     # This ensures wlanpi-misc-firmware's newer firmware takes precedence
     for f in mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin \
@@ -19,8 +37,8 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
              mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin \
              mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin; do
         dpkg-divert --package wlanpi-misc-firmware --no-rename --quiet \
-            --divert "/lib/firmware/$f.distro" \
-            --add "/lib/firmware/$f"
+            --divert "/usr/lib/firmware/$f.distro" \
+            --add "/usr/lib/firmware/$f"
     done
 fi
 

@@ -1,10 +1,9 @@
 Source: wlanpi-misc-firmware
-Section: non-free/kernel
+Section: non-free-firmware/kernel
 Priority: optional
 Maintainer: Josh Schmelzle <josh@joshschmelzle.com>
-Uploaders: 
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.3.0
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
 Homepage: https://github.com/WLAN-Pi/wlanpi-misc-firmware
 
 Package: wlanpi-misc-firmware
@@ -20,21 +19,21 @@ Description: WLAN Pi - binary firmware for misc wireless cards
  precedence over firmware-misc-nonfree for overlapping files.
  .
  Contents:
- * MediaTek MT7961 (MT7921) firmware
-   (/lib/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin)
-   (/lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin)
-   (/lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin)
- * MediaTek MT7610U firmware
-   (/lib/firmware/mediatek/mt7610u.bin)
-   (/lib/firmware/mediatek/mt7610e.bin)
- * MediaTek MT7612U firmware
-   (/lib/firmware/mt7662.bin)
-   (/lib/firmware/mt7662_rom_patch.bin)
- * MediaTek MT7922 firmware
-   (/lib/firmware/mediatek/WIFI_RAM_CODE_MT7922_1.bin)
-   (/lib/firmware/mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin)
-   (/lib/firmware/mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin)
- * MediaTek MT7925 firmware (WiFi 7)
-   (/lib/firmware/mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin)
-   (/lib/firmware/mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin)
-   (/lib/firmware/mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin)
+  * MediaTek MT7961 (MT7921) firmware
+    (/usr/lib/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin)
+    (/usr/lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin)
+    (/usr/lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin)
+  * MediaTek MT7610U firmware
+    (/usr/lib/firmware/mediatek/mt7610u.bin)
+    (/usr/lib/firmware/mediatek/mt7610e.bin)
+  * MediaTek MT7612U firmware
+    (/usr/lib/firmware/mt7662.bin)
+    (/usr/lib/firmware/mt7662_rom_patch.bin)
+  * MediaTek MT7922 firmware
+    (/usr/lib/firmware/mediatek/WIFI_RAM_CODE_MT7922_1.bin)
+    (/usr/lib/firmware/mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin)
+    (/usr/lib/firmware/mediatek/BT_RAM_CODE_MT7922_1_1_hdr.bin)
+  * MediaTek MT7925 firmware (WiFi 7)
+    (/usr/lib/firmware/mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin)
+    (/usr/lib/firmware/mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin)
+    (/usr/lib/firmware/mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin)

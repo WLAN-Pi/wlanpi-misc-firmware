@@ -18,11 +18,23 @@ if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
              mediatek/mt7925/WIFI_MT7925_PATCH_MCU_1_1_hdr.bin \
              mediatek/mt7925/WIFI_RAM_CODE_MT7925_1_1.bin; do
         dpkg-divert --package wlanpi-misc-firmware --no-rename --quiet \
-            --divert "/lib/firmware/$f.distro" \
-            --remove "/lib/firmware/$f" || true
+            --remove "/usr/lib/firmware/$f" || true
     done
 fi
 
 #DEBHELPER#
+
+# Remove files created by postinst on purge
+if [ "$1" = "purge" ]; then
+    rm -f /etc/modules-load.d/mt7921u.conf \
+          /etc/modules-load.d/mt7925u.conf \
+          /etc/udev/rules.d/99-cf95x.rules \
+          /etc/udev/rules.d/99-axe3000.rules \
+          /etc/udev/rules.d/99-a9000.rules \
+          /etc/udev/hwdb.d/99-wlanpi-be200.hwdb || true
+    if command -v systemd-hwdb >/dev/null 2>&1; then
+        systemd-hwdb update || true
+    fi
+fi
 
 exit 0

@@ -1,3 +1,28 @@
+wlanpi-misc-firmware (1.0.20) trixie; urgency=medium
+
+  * Add debian/copyright (DEP-5) and debian/source/format
+  * Update packaging for trixie: debhelper-compat (= 13), Standards-Version
+    4.7.0, Section non-free-firmware/kernel; drop debian/compat
+  * Install firmware under /usr/lib/firmware instead of the aliased
+    /lib/firmware path
+  * Update MediaTek MT7922 firmware to the linux-firmware 20260916 tag:
+    * WIFI_MT7922_patch_mcu_1_1_hdr.bin: 20260106153416a -> 20260724143257a
+    * WIFI_RAM_CODE_MT7922_1.bin: 20260106153507 -> 20260724143402
+    * BT_RAM_CODE_MT7922_1_1_hdr.bin: 20260106153735 -> 20260724143815
+  * Update MediaTek MT7925 firmware to the linux-firmware 20260916 tag:
+    * WIFI_MT7925_PATCH_MCU_1_1_hdr.bin: 20260106153007a -> 20260813113015a
+    * WIFI_RAM_CODE_MT7925_1_1.bin: 20260106153120 -> 20260813113118
+    * BT_RAM_CODE_MT7925_1_1_hdr.bin: 20260106153314 -> 20260813113236
+  * Remove redundant udev new_id rules for CF-953AX, AXE3000 and A9000 (all
+    IDs are already in the mt7921u/mt7925u device tables)
+  * Move the Intel BE200 hwdb entry to /etc/udev/hwdb.d and clean up the
+    files created by postinst on purge
+  * Drop update-pciids from postinst
+  * Remove the stray lib/firmware/mediatek/readme from the package
+  * Build for trixie only
+
+ -- Josh Schmelzle <josh@joshschmelzle.com>  Mon, 21 Sep 2026 19:30:00 -0500
+
 wlanpi-misc-firmware (1.0.19) unstable; urgency=medium
 
   * Add MediaTek MT7610U firmware (mt7610u.bin, mt7610e.bin)
