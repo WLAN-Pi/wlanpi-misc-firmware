@@ -8,17 +8,11 @@ echo "mt7921u" > /etc/modules-load.d/mt7921u.conf
 # Add support for MediaTek mt7925u adapters
 echo "mt7925u" > /etc/modules-load.d/mt7925u.conf
 
-# Support Comfast CF-953AX USB adapter (mt7921u)
-echo "Adding support for Comfast CF-953AX USB adapter"
-echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7921u", ATTR{new_id}="3574 6211"' > /etc/udev/rules.d/99-cf95x.rules
-
-# Support Netgear Nighthawk AXE3000 USB adapter (mt7921u)
-echo "Adding support for Netgear Nighthawk AXE3000 USB adapter"
-echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7921u", ATTR{new_id}="0846 9060"' > /etc/udev/rules.d/99-axe3000.rules
-
-# Support Netgear Nighthawk A9000 USB adapter (mt7925u)
-echo "Adding support for Netgear Nighthawk A9000 USB adapter"
-echo 'SUBSYSTEM=="drivers", DEVPATH=="/bus/usb/drivers/mt7925u", ATTR{new_id}="0846 9072"' > /etc/udev/rules.d/99-a9000.rules
+# Remove the udev new_id rules created by earlier versions. The device IDs are
+# already in the mt7921u/mt7925u device tables.
+rm -f /etc/udev/rules.d/99-cf95x.rules \
+      /etc/udev/rules.d/99-axe3000.rules \
+      /etc/udev/rules.d/99-a9000.rules
 
 # If this is not being executed by pi-gen during image build process, apply changes immediately without requiring a reboot
 if [ -f /etc/wlanpi-release ]; then
@@ -29,11 +23,8 @@ if [ -f /etc/wlanpi-release ]; then
 fi
 
 # Add Intel Corp. BE200 Bluetooth device name to lsusb
-HWDB_FILE="/usr/lib/udev/hwdb.d/99-usb-vendor-model.hwdb"
-if [ ! -f "$HWDB_FILE" ]; then
-    touch "$HWDB_FILE"
-fi
-if ! grep -q "usb:v8087p0036" "$HWDB_FILE"; then
+HWDB_FILE="/etc/udev/hwdb.d/99-wlanpi-be200.hwdb"
+if ! grep -q "usb:v8087p0036" "$HWDB_FILE" 2>/dev/null; then
 echo "Adding Intel Corp. BE200 Bluetooth device name to lsusb"
 cat >"$HWDB_FILE" <<'EOL'
 # Intel Corp. BE200 Bluetooth device name added by WLAN Pi team
@@ -44,8 +35,13 @@ EOL
 systemd-hwdb update
 fi
 
-# Update lspci PCI device names
-echo "Updating lspci PCI device names"
-update-pciids
+# Remove the old hwdb file if it contains only the WLAN Pi entry
+OLD_HWDB_FILE="/usr/lib/udev/hwdb.d/99-usb-vendor-model.hwdb"
+if [ -f "$OLD_HWDB_FILE" ] && grep -q "WLAN Pi team" "$OLD_HWDB_FILE"; then
+    if [ "$(grep -cvE '^[[:space:]]*(#|$)' "$OLD_HWDB_FILE")" -le 2 ]; then
+        rm -f "$OLD_HWDB_FILE"
+        systemd-hwdb update
+    fi
+fi
 
 exit 0

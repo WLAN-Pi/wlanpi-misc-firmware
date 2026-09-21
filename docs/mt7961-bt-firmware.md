@@ -57,7 +57,7 @@ disappeared.
 ### BT firmware present
 
 With `BT_RAM_CODE_MT7961_1_2_hdr.bin` (build `20260224111243`) placed in
-`/lib/firmware/mediatek/`:
+`/usr/lib/firmware/mediatek/`:
 
 ```
 Bluetooth: hci0: HW/SW Version: 0x008a008a, Build Time: 20260224111243
