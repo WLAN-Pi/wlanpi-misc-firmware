@@ -24,6 +24,9 @@ Description: WLAN Pi - binary firmware for misc wireless cards
    (/lib/firmware/mediatek/WIFI_RAM_CODE_MT7961_1.bin)
    (/lib/firmware/mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin)
    (/lib/firmware/mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin)
+ * MediaTek MT7610U firmware
+   (/lib/firmware/mediatek/mt7610u.bin)
+   (/lib/firmware/mediatek/mt7610e.bin)
  * MediaTek MT7612U firmware
    (/lib/firmware/mt7662.bin)
    (/lib/firmware/mt7662_rom_patch.bin)

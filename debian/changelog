@@ -1,5 +1,6 @@
 wlanpi-misc-firmware (1.0.19) unstable; urgency=medium
 
+  * Add MediaTek MT7610U firmware (mt7610u.bin, mt7610e.bin)
   * Add MediaTek MT7612U firmware (mt7662.bin, mt7662_rom_patch.bin)
   * Add MediaTek MT7961 Bluetooth firmware (BT_RAM_CODE_MT7961_1_2_hdr.bin)
   * Update MT7961 Wi-Fi firmware to the 2026-02-24 upstream snapshot:

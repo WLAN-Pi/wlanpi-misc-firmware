@@ -11,6 +11,8 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
              mediatek/WIFI_RAM_CODE_MT7961_1.bin \
              mediatek/WIFI_MT7961_patch_mcu_1_2_hdr.bin \
              mediatek/BT_RAM_CODE_MT7961_1_2_hdr.bin \
+             mediatek/mt7610u.bin \
+             mediatek/mt7610e.bin \
              mt7662.bin \
              mt7662_rom_patch.bin \
              mediatek/mt7925/BT_RAM_CODE_MT7925_1_1_hdr.bin \
