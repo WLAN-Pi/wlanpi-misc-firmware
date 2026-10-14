@@ -43,7 +43,7 @@ jobs:
           lintian --fail-on error "${{ steps.build-debian-package.outputs.deb-package }}"
 
       - name: Archive artifacts and upload to GitHub
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: wlanpi-misc-firmware-${{ matrix.distro }}-${{ matrix.arch }}
           path: ${{ steps.build-debian-package.outputs.deb-package }}
