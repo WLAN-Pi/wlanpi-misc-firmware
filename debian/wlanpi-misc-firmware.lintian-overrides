@@ -1,0 +1,7 @@
+# These are raw firmware images for wireless NICs, not ELF executables.
+# Some of them merely begin with ELF-like headers, which trips lintian's
+# binary detection (same overrides Debian's own firmware packages carry).
+# Patterns are package-wide: every file in this package is firmware.
+arch-independent-package-contains-binary-or-object
+statically-linked-binary
+unstripped-binary-or-object

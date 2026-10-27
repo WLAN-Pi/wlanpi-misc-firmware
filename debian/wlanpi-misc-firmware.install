@@ -1,3 +1,7 @@
 lib/firmware/mediatek/* usr/lib/firmware/mediatek/
+lib/firmware/ath12k/* usr/lib/firmware/ath12k/
 lib/firmware/mt7662.bin usr/lib/firmware/
 lib/firmware/mt7662_rom_patch.bin usr/lib/firmware/
+lib/firmware/mt7601u.bin usr/lib/firmware/
+lib/firmware/mt7650.bin usr/lib/firmware/
+lib/firmware/rt*.bin usr/lib/firmware/

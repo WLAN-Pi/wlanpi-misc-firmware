@@ -1,3 +1,42 @@
+wlanpi-misc-firmware (1.0.21) trixie; urgency=medium
+
+  * Add MediaTek MT7927 (Filogic 380) Wi-Fi 7 firmware from linux-firmware
+    commit 238e3a14 (2026-04-25). WiFi only: the MT6639 Bluetooth blob does
+    not exist in linux-firmware yet
+  * Add Qualcomm ath12k WCN7850/QCN7851 (e.g. QCNCM865) Wi-Fi 7 firmware from
+    the linux-firmware 20261019 tag, with dpkg-divert support to coexist with
+    firmware-atheros
+  * Absorb the wireless-relevant contents of firmware-mediatek, which this
+    package Conflicts/Replaces, so removing firmware-mediatek causes no
+    regression: MT7902 (WiFi + Bluetooth), MT7961/MT7921 1a variants, MT7601U,
+    MT7650/MT7662 (incl. mt7662u), MT7615/MT7622/MT7663/MT7668, MT7915/MT7916
+    and Ralink rt2x00 (rt73, rt2561, rt2561s, rt2661, rt2860, rt2870, rt3071,
+    rt3290) firmware, all from linux-firmware 20261019. rt3070.bin and
+    rt3090.bin are intentionally not shipped; they were removed from
+    linux-firmware upstream. Non-wireless firmware-mediatek contents (MT81xx
+    SoC scp/vpu, SOF audio, MT798x/MT7996 router-internal firmware) are out of
+    scope and not shipped
+  * Update MediaTek MT7925 firmware to the linux-firmware 20261019-23 tag
+    (0a62bdca)
+  * Add dpkg-divert entries in preinst/postrm for all new files
+  * Fix malformed signoff date in the 1.0.5 changelog entry, which newer
+    debhelper versions reject
+
+  Firmware versions:
+  * mediatek/mt7927/WIFI_MT6639_PATCH_MCU_2_1_hdr.bin: 20260414133750a
+  * mediatek/mt7927/WIFI_RAM_CODE_MT6639_2_1.bin: 20260414134255
+  * ath12k/WCN7850/hw2.0/amss.bin:
+    WLAN.HMT.1.1.c7-00108-QCAHMTSWPL_V1.0_V2.0_SILICONZ_UPSTREAM-3
+  * ath12k/WCN7850/hw2.0/board-2.bin: 575bbe3f (2026-10-08)
+  * ath12k/WCN7850/hw2.0/m3.bin, ath12k/WCN7850/hw2.0/ncm865/m3.bin
+  * ath12k/WCN7850/hw2.0/ncm865/amss.bin:
+    WLAN.IOE_HMT.1.1-00018-QCAHMTSWPL_V1.0_V2.0_SILICONZ-1
+  * WIFI_MT7925_PATCH_MCU_1_1_hdr.bin: 20260813113015a -> 20261016232915a
+  * WIFI_RAM_CODE_MT7925_1_1.bin: 20260813113118 -> 20261016233029
+  * BT_RAM_CODE_MT7925_1_1_hdr.bin: 20260813113236 -> 20261016233221
+
+ -- Jake Snyder <jsnyder81@gmail.com>  Tue, 27 Oct 2026 03:27:29 +0000
+
 wlanpi-misc-firmware (1.0.20) trixie; urgency=medium
 
   * Add debian/copyright (DEP-5) and debian/source/format
@@ -132,13 +171,13 @@ wlanpi-misc-firmware (1.0.7) unstable; urgency=medium
 
   *  Update MediaTek firmware files as of 05 Sep 2023
 
-File names and versions (used strings command to get version):
-BT_RAM_CODE_MT7922_1_1_hdr.bin - 20230627143102
-BT_RAM_CODE_MT7961_1_2_hdr.bin - 20230526130802
-WIFI_MT7922_patch_mcu_1_1_hdr.bin - 20230627143702a
-WIFI_MT7961_patch_mcu_1_2_hdr.bin - 20230526130917a
-WIFI_RAM_CODE_MT7922_1.bin - 20230627143102
-WIFI_RAM_CODE_MT7961_1.bin - 20230526130802
+   File names and versions (used strings command to get version):
+   BT_RAM_CODE_MT7922_1_1_hdr.bin - 20230627143102
+   BT_RAM_CODE_MT7961_1_2_hdr.bin - 20230526130802
+   WIFI_MT7922_patch_mcu_1_1_hdr.bin - 20230627143702a
+   WIFI_MT7961_patch_mcu_1_2_hdr.bin - 20230526130917a
+   WIFI_RAM_CODE_MT7922_1.bin - 20230627143102
+   WIFI_RAM_CODE_MT7961_1.bin - 20230526130802
 
  -- Jiri Brejcha <jirka@jiribrejcha.net>  Tue, 05 Sep 2023 17:45:03 +0100
 
@@ -153,7 +192,7 @@ wlanpi-misc-firmware (1.0.5) unstable; urgency=medium
 
   * Update MediaTek firmware files for MT7922
 
- -- Adrian Granados <adrian@intuitibits.com>  Sun, Jan 29 2023 17:00:00 -0600
+ -- Adrian Granados <adrian@intuitibits.com>  Sun, 29 Jan 2023 17:00:00 -0600
 
 wlanpi-misc-firmware (1.0.4) unstable; urgency=medium
 
