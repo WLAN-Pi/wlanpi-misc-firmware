@@ -1,0 +1,10 @@
+# Morse Micro MM81x v56 board-type symlinks
+usr/lib/firmware/morsemicro/mm81x/v56/bcf_mm8108_mf15457.bin usr/lib/firmware/morsemicro/mm81x/v56/bcf_boardtype_0804.bin
+usr/lib/firmware/morsemicro/mm81x/v56/bcf_mm8108_mf15457.bin usr/lib/firmware/morsemicro/mm81x/v56/bcf_boardtype_0807.bin
+usr/lib/firmware/morsemicro/mm81x/v56/bcf_aw_hm677.bin usr/lib/firmware/morsemicro/mm81x/v56/bcf_boardtype_0a02.bin
+
+# Morse Micro MM81x v57 board-type symlinks
+usr/lib/firmware/morsemicro/mm81x/v57/bcf_mm8108_mf15457.bin usr/lib/firmware/morsemicro/mm81x/v57/bcf_boardtype_0804.bin
+usr/lib/firmware/morsemicro/mm81x/v57/bcf_mm8108_mf15457.bin usr/lib/firmware/morsemicro/mm81x/v57/bcf_boardtype_0807.bin
+usr/lib/firmware/morsemicro/mm81x/v57/bcf_aw_hm677.bin usr/lib/firmware/morsemicro/mm81x/v57/bcf_boardtype_0a02.bin
+
