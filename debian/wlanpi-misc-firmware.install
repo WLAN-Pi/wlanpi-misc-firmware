@@ -5,3 +5,6 @@ lib/firmware/mt7662_rom_patch.bin usr/lib/firmware/
 lib/firmware/mt7601u.bin usr/lib/firmware/
 lib/firmware/mt7650.bin usr/lib/firmware/
 lib/firmware/rt*.bin usr/lib/firmware/
+lib/firmware/morsemicro/mm81x/v56/* usr/lib/firmware/morsemicro/mm81x/v56/
+lib/firmware/morsemicro/mm81x/v57/* usr/lib/firmware/morsemicro/mm81x/v57/
+

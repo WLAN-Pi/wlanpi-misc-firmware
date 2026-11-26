@@ -85,7 +85,19 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
              ath12k/WCN7850/hw2.0/board-2.bin \
              ath12k/WCN7850/hw2.0/m3.bin \
              ath12k/WCN7850/hw2.0/ncm865/amss.bin \
-             ath12k/WCN7850/hw2.0/ncm865/m3.bin; do
+             ath12k/WCN7850/hw2.0/ncm865/m3.bin \
+             morsemicro/mm81x/v56/mm8108.bin \
+             morsemicro/mm81x/v56/bcf_mm8108_mf15457.bin \
+             morsemicro/mm81x/v56/bcf_aw_hm677.bin \
+             morsemicro/mm81x/v56/bcf_boardtype_0804.bin \
+             morsemicro/mm81x/v56/bcf_boardtype_0807.bin \
+             morsemicro/mm81x/v56/bcf_boardtype_0a02.bin \
+             morsemicro/mm81x/v57/mm8108.bin \
+             morsemicro/mm81x/v57/bcf_mm8108_mf15457.bin \
+             morsemicro/mm81x/v57/bcf_aw_hm677.bin \
+             morsemicro/mm81x/v57/bcf_boardtype_0804.bin \
+             morsemicro/mm81x/v57/bcf_boardtype_0807.bin \
+             morsemicro/mm81x/v57/bcf_boardtype_0a02.bin; do
         dpkg-divert --package wlanpi-misc-firmware --no-rename --quiet \
             --divert "/usr/lib/firmware/$f.distro" \
             --add "/usr/lib/firmware/$f"

@@ -12,6 +12,9 @@ Firmware repositories:
   <https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/mediatek>
 - Qualcomm ath12k:
   <https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/ath12k>
+- Morse Micro:
+  <https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/morsemicro>
+
 
 ## Contents
 
@@ -31,6 +34,8 @@ Firmware repositories:
 | MediaTek MT7915/MT7916 | `mediatek/mt7915_eeprom.bin`, `mediatek/mt7915_eeprom_dbdc.bin`, `mediatek/mt7915_rom_patch.bin`, `mediatek/mt7915_wa.bin`, `mediatek/mt7915_wm.bin`, `mediatek/mt7916_eeprom.bin`, `mediatek/mt7916_rom_patch.bin`, `mediatek/mt7916_wa.bin`, `mediatek/mt7916_wm.bin` |
 | Ralink rt2x00 | `rt73.bin`, `rt2561.bin`, `rt2561s.bin`, `rt2661.bin`, `rt2860.bin`, `rt2870.bin`, `rt3071.bin`, `rt3290.bin` |
 | Qualcomm WCN7850/QCN7851 (Wi-Fi 7, e.g. QCNCM865) | `ath12k/WCN7850/hw2.0/amss.bin`, `ath12k/WCN7850/hw2.0/board-2.bin`, `ath12k/WCN7850/hw2.0/m3.bin`, `ath12k/WCN7850/hw2.0/ncm865/amss.bin`, `ath12k/WCN7850/hw2.0/ncm865/m3.bin` |
+| Morse Micro MM81x (MM8108, Wi-Fi HaLow) | `morsemicro/mm81x/v56/mm8108.bin`, `morsemicro/mm81x/v56/bcf_mm8108_mf15457.bin`, `morsemicro/mm81x/v56/bcf_aw_hm677.bin` (plus `bcf_boardtype_{0804,0807,0a02}.bin` symlinks), `morsemicro/mm81x/v57/mm8108.bin`, `morsemicro/mm81x/v57/bcf_mm8108_mf15457.bin`, `morsemicro/mm81x/v57/bcf_aw_hm677.bin` (plus `bcf_boardtype_{0804,0807,0a02}.bin` symlinks) |
+
 
 Some drivers request their firmware from the top level of `/usr/lib/firmware`
 (without a vendor prefix), so `mt7662.bin`, `mt7662_rom_patch.bin`, `mt7601u.bin`,
@@ -57,7 +62,7 @@ the distro firmware packages.
 
 1. Pick a `linux-firmware` tag.
 2. Download the target files from `mediatek/` (and the `mediatek/mt7925/`,
-   `mediatek/mt7927/` subdirectories) and `ath12k/` at that tag.
+   `mediatek/mt7927/` subdirectories), `ath12k/` and `morsemicro/` at that tag.
 3. Copy them into the matching path under `lib/firmware/`, keeping the
    upstream directory layout.
 4. Verify the version strings:
@@ -70,6 +75,7 @@ the distro firmware packages.
 The MediaTek files are currently from the `20261019` tag (MT7925 from
 `20261019-23`/`0a62bdca`) and the ath12k files from `20261019`. See issue #20
 for the verification that is still outstanding for the MT7922/MT7925 blobs.
+The Morse Micro files are from the `20261124` tag.
 
 ## Building
 
